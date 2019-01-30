@@ -1,2 +1,4 @@
 kmapper
 sklearn
+pandas
+matplotlib
