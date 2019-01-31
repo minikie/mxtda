@@ -11,7 +11,7 @@ from matplotlib import pyplot
 from sklearn import datasets
 #data, labels = datasets.make_circles(n_samples=5000, noise=0.03, factor=0.1)
 samples = 3000
-cubes = 30
+cubes = 20
 over_lap = 0.15
 data = fifa.get_processed_data(sample=samples)
 
@@ -45,7 +45,7 @@ projected_data = mapper.fit_transform(
 graph = mapper.map(projected_data[:,1],
                    projected_data,
                    cover=km.Cover(n_cubes=cubes, perc_overlap=over_lap),
-                   clusterer=cluster.DBSCAN(eps=0.2, min_samples=3),
+                   clusterer=cluster.KMeans(),
                    precomputed=False)
 
 # Visualize it
